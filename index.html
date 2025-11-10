@@ -1,158 +1,826 @@
 <!DOCTYPE html>
-<!-- saved from url=(0055)file:///D:/4-personal%20information/CV-Haie%20Long.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haie Long - Personal Webpage</title>
+    <title>龙海娥 (Haie Long) - Academic Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --text: #333;
+            --text-light: #7f8c8d;
+            --success: #27ae60;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+        }
+        
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+        
         header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77c7c1 3px solid;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
-        header ul {
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 1rem;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header-text h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
             padding: 0;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--secondary);
+            border-bottom: 3px solid var(--secondary);
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        section {
+            margin-bottom: 2.5rem;
+        }
+        
+        section:last-child {
+            margin-bottom: 0;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        h2 i {
+            color: var(--secondary);
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .education-item, .position-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--light);
+        }
+        
+        .education-item h4, .position-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .date {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .interest-tag {
+            background: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .interest-tag:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .publications-list {
+            list-style: none;
+            counter-reset: publication-counter;
+        }
+        
+        .publications-list li {
+            counter-increment: publication-counter;
+            margin-bottom: 1.5rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+        
+        .publications-list li::before {
+            content: "[" counter(publication-counter) "]";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .publication-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .publication-authors {
+            margin-bottom: 0.25rem;
+        }
+        
+        .publication-journal {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .publication-year {
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .projects-list {
             list-style: none;
         }
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
+        
+        .projects-list li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary);
         }
-        .main {
-            padding: 20px;
-            background: #fff;
+        
+        .project-role {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
         }
-        .main h1, .main h2, .main h3 {
-            margin-top: 0;
+        
+        .pi {
+            background: rgba(39, 174, 96, 0.2);
+            color: var(--success);
         }
-        .main p {
-            margin-bottom: 10px;
+        
+        .participant {
+            background: rgba(127, 140, 141, 0.2);
+            color: var(--text-light);
         }
-        .publications ol {
-            list-style-type: none;
-            padding-left: 0;
+        
+        .teaching-list {
+            list-style: none;
         }
-        .publications ol li::before {
-            content: "[";
-            margin-right: -4px;
+        
+        .teaching-list li {
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            background: var(--light);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .publications ol li::after {
-            content: "]";
-            margin-left: 2px;
+        
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
-        footer {
-            background: #333;
-            color: #fff;
+        
+        .contact-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            padding: 30px;
-            margin-top: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--accent);
+        }
+        
+        .modal-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .modal-publications-list {
+            list-style: none;
+            counter-reset: modal-publication-counter;
+        }
+        
+        .modal-publications-list li {
+            counter-increment: modal-publication-counter;
+            margin-bottom: 1.5rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+        
+        .modal-publications-list li::before {
+            content: "[" counter(modal-publication-counter) "]";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .view-all-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .view-all-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                padding: 0.75rem 1rem;
+            }
+            
+            .header-text h1 {
+                font-size: 2rem;
+            }
+            
+            .header-text h2 {
+                font-size: 1.2rem;
+            }
+            
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Haie Long</h1>
-            <ul>
-                <li><a href="file:///D:/4-personal%20information/CV-Haie%20Long.html#about">About Me</a></li>
-                <li><a href="file:///D:/4-personal%20information/CV-Haie%20Long.html#research">Research Interests</a></li>
-                <li><a href="file:///D:/4-personal%20information/CV-Haie%20Long.html#publications">Publications</a></li>
-                <li><a href="file:///D:/4-personal%20information/CV-Haie%20Long.html#projects">Projects</a></li>
-                <li><a href="file:///D:/4-personal%20information/CV-Haie%20Long.html#teaching">Teaching</a></li>
-                <li><a href="file:///D:/4-personal%20information/CV-Haie%20Long.html#contact">Contact</a></li>
-            </ul>
+            <div class="header-content">
+                <div class="profile-img">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="header-text">
+                    <h1>龙海娥 (Haie Long)</h1>
+                    <h2>Senior Lecturer in Computational Mathematics</h2>
+                    <p>Shenzhen MSU-BIT University</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>haie_long@smbu.edu.cn</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Shenzhen, China</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
-    <div class="container main">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Haie Long （龙海娥）</p>
-            <p>Senior Lecturer</p>
-            <p>MSU-BIT-SMBU Joint Research Center of Applied Mathematics, Shenzhen MSU-BIT University</p>
-            <p>Personal Page: <a href="https://www.smbu.edu.cn/info/4271/81681.htm">https://www.smbu.edu.cn/info/4271/81681.htm</a></p>
-            <p>Education:</p>
+    
+    <nav>
+        <div class="container nav-container">
             <ul>
-                <li>Sept. 2016-Jul. 2021: PhD in Applied Mathematics, Harbin Institute of Technology. Supervisor: Professor Bo Han (韩波)</li>
-                <li>Jan. 2020-Jan. 2021: Visiting PhD student in Applied Mathematics, Columbia University. Supervisor: Professor Kui Ren</li>
-                <li>Sept. 2012-Jun. 2016: B.S. in Mathematics and Statistics, Henan University</li>
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-           <p>Positions:</p>
-            <ul>
-                <li>Nov. 2023-Present: Senior Lecturer, MSU-BIT-SMBU Joint Research Center of Applied Mathematics, Shenzhen MSU-BIT University</li>
-                <li>Aug. 2021-Oct. 2023: Postdoctoral Fellowship, Shenzhen MSU-BIT University. Co-advisor: Professor Ye Zhang (张晔)</li>
-            </ul>
-        </section>
-        <section id="research">
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Ill-posed inverse problems</li>
-                <li>Novel regularization methods</li>
-                <li>Stochastic algorithms</li>
-                <li>Machine learning in inverse problems</li>
-                <li>Diffuse optical tomography</li>
-            </ul>
-        </section>
-        <section id="publications">
-            <h2>Publications</h2>
-            <ol>     
-                <li>H. Long, Y. Zhang. Stochastic asymptotical regularization for nonlinear ill-posed problems. (Under review)</li>
-                <li>H. Long, Y. Zhang, G. Gao. An accelerated inexact Newton regularization scheme with a learned feature-selection rule for non-linear inverse problems. Inverse Problems, 40:085011, 2024.</li>
-                <li>H. Long, Y. Zhang, G. Gao. An accelerated inexact Newton-type regularizing algorithm for ill-posed operator equations. Journal of Computational and Applied Mathematics, 451:116052, 2024.</li>
-                <li>G. Wang, X.Wang, H. Long, B. Han. Simple and high-order N-solitons of the nonlocal generalized Sasa-Satsuma equation via an improved Riemann-Hilbert method. Z. Angew. Math. Phys., 75:94, 2024.</li>
-                <li>X. Yan, H. Long, Y. Chen. Prediction of general high-order lump solutions in the Davey-Stewartson II equation. Proc. R. Soc. A, 479: 20230455, 2023.</li>
-                <li>G. Gao, B.Han, H. Long. A generalized adaptive Levenberg-Marquardt method for solving nonlinear ill-posed problems. Inverse Problems, 39:015009, 2023.</li>
-                <li>S. Tong, B. Han, H. Long, R. Gu. An accelerated sequential subspace optimization method based on homotopy perturbation iteration for nonlinear ill-posed problems. Inverse Problems, 35(12):125005, 2019.</li>
-                <li>H. Long, B. Han, L. Li. A fast two-point gradient method for solving non-smooth nonlinear ill-posed problems. Journal of Computational and Applied Mathematics, 384:113114, 2021.</li>
-                <li>H. Long, B. Han, S.Tong. A proximal regularized Gauss-Newton-Kaczmarz method and its acceleration for nonlinear ill-posed problems. Applied Numerical Mathematics, 151:301-321, 2020.</li>
-                <li>H. Long, B. Han, S.Tong. A new Kaczmarz-type method and its acceleration for nonlinear ill-posed problems. Inverse Problems, 35(05):055004, 2019.</li>
-            </ol>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li>2023: China Postdoctoral Science Foundation, Principal Investigator</li>
-                <li>2022-2025: Guangdong Basic and Applied Basic Research Foundation, Principal Investigator</li>
-                <li>2022-2024: Guangdong Youth Innovative Talents Project, Principal Investigator</li>
-                <li>2019-2022: National Natural Science Foundation of China (No.11871180), Participant</li>
-                <li>2021-2024: National Natural Science Foundation of China (No.12071184), Participant</li>
-            </ul>
-        </section>
-        <section id="teaching">
-            <h2>Teaching</h2>
-            <ul>
-                <li>Fall 2023：Mathematical Analysis in Engineering</li>
-                <li>Fall 2024：Mathematical Analysis in Engineering</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Address: Room 334, Main Building, 1 International University Park Road, Longgang District, Shenzhen, Guangdong Province, P.R. China 518172</p>
-            <p>Email: haie_long@smbu.edu.cn</p>
-        </section>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="main-content">
+            <aside class="sidebar">
+                <section id="quick-info">
+                    <h2><i class="fas fa-info-circle"></i> Quick Info</h2>
+                    <div class="info-item">
+                        <h3>Affiliation</h3>
+                        <p>MSU-BIT-SMBU Joint Research Center of Applied Mathematics</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Research Focus</h3>
+                        <p>Inverse Problems, Regularization Methods, Stochastic Algorithms</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>ORCID</h3>
+                        <p><a href="#">https://orcid.org/0000-0003-4598-7681</a></p>
+                    </div>
+                </section>
+                
+                <section id="skills">
+                    <h2><i class="fas fa-tools"></i> Expertise</h2>
+                    <ul>
+                        <li>Numerical Analysis</li>
+                        <li>Optimization Methods</li>
+                        <li>Scientific Computing</li>
+                        <li>Mathematical Modeling</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                </section>
+            </aside>
+            
+            <main class="content">
+                <section id="about">
+                    <h2><i class="fas fa-user"></i> About Me</h2>
+                    <p>I am a Senior Lecturer at the MSU-BIT-SMBU Joint Research Center of Applied Mathematics, Shenzhen MSU-BIT University. My research focuses on inverse problems, regularization methods, and stochastic algorithms with applications in various scientific domains.</p>
+                    
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="education-item">
+                        <h4>Ph.D. in Applied Mathematics</h4>
+                        <div class="date">Sept 2016 - Jul 2021</div>
+                        <p>Harbin Institute of Technology</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>Visiting Ph.D. Student</h4>
+                        <div class="date">Jan 2020 - Jan 2021</div>
+                        <p>Columbia University</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>B.S. in Mathematics and Statistics</h4>
+                        <div class="date">Sept 2012 - Jun 2016</div>
+                        <p>Henan University</p>
+                    </div>
+                    
+                    <h3><i class="fas fa-briefcase"></i> Positions</h3>
+                    <div class="position-item">
+                        <h4>Senior Lecturer</h4>
+                        <div class="date">Nov 2023 - Present</div>
+                        <p>Shenzhen MSU-BIT University</p>
+                    </div>
+                    <div class="position-item">
+                        <h4>Postdoctoral Fellow</h4>
+                        <div class="date">Aug 2021 - Oct 2023</div>
+                        <p>Shenzhen MSU-BIT University</p>
+                        <p>Co-advisor: Professor Ye Zhang</p>
+                    </div>
+                </section>
+                
+                <section id="research">
+                    <h2><i class="fas fa-flask"></i> Research Interests</h2>
+                    <div class="research-interests">
+                        <div class="interest-tag">Ill-posed inverse problems</div>
+                        <div class="interest-tag">Novel regularization methods</div>
+                        <div class="interest-tag">Stochastic algorithms</div>
+                        <div class="interest-tag">Machine learning in inverse problems</div>
+                        <div class="interest-tag">Diffuse optical tomography</div>
+                    </div>
+                </section>
+                
+                <section id="publications">
+                    <h2><i class="fas fa-book"></i> Selected Publications</h2>
+                    <ol class="publications-list">
+                        <li>
+                            <div class="publication-title">Stochastic asymptotical regularization for nonlinear ill-posed problems</div>
+                            <div class="publication-authors"><span class="highlight">H. Long</span>, Y. Zhang</div>
+                            <div class="publication-journal">Inverse Problems, 41:065017(47pp)</div>
+                            <div class="publication-year">2025</div>
+                        </li>
+                        <li>
+                            <div class="publication-title">An accelerated inexact Newton regularization scheme with a learned feature-selection rule for non-linear inverse problems</div>
+                            <div class="publication-authors"><span class="highlight">H. Long</span>, Y. Zhang, G. Gao</div>
+                            <div class="publication-journal">Inverse Problems, 40:085011(36pp)</div>
+                            <div class="publication-year">2024</div>
+                        </li>
+                        <li>
+                            <div class="publication-title">An accelerated inexact Newton-type regularizing algorithm for ill-posed operator equations</div>
+                            <div class="publication-authors"><span class="highlight">H. Long</span>, Y. Zhang, G. Gao</div>
+                            <div class="publication-journal">Journal of Computational and Applied Mathematics, 451:116052</div>
+                            <div class="publication-year">2024</div>
+                        </li>
+                        <li>
+                            <div class="publication-title">Simple and high-order N-solitons of the nonlocal generalized Sasa-Satsuma equation via an improved Riemann-Hilbert method</div>
+                            <div class="publication-authors">G. Wang, X. Wang, <span class="highlight">H. Long</span>, B. Han</div>
+                            <div class="publication-journal">Z. Angew. Math. Phys., 75:94</div>
+                            <div class="publication-year">2024</div>
+                        </li>
+                        <li>
+                            <div class="publication-title">Prediction of general high-order lump solutions in the Davey-Stewartson II equation</div>
+                            <div class="publication-authors">X. Yan, <span class="highlight">H. Long</span>, Y. Chen</div>
+                            <div class="publication-journal">Proceedings of the Royal Society A, 479:20230455</div>
+                            <div class="publication-year">2023</div>
+                        </li>
+                    </ol>
+                    <a href="#" class="view-all-link" id="view-all-publications">View all publications →</a>
+                </section>
+                
+                <section id="projects">
+                    <h2><i class="fas fa-tasks"></i> Research Projects</h2>
+                    <ul class="projects-list">
+                        <li>
+                            <strong>2026-2028:</strong> National Natural Science Foundation of China (Youth Program)
+                            <span class="project-role pi">PI</span>
+                        </li>
+                        <li>
+                            <strong>2023:</strong> China Postdoctoral Science Foundation
+                            <span class="project-role pi">PI</span>
+                        </li>
+                        <li>
+                            <strong>2022-2025:</strong> Guangdong Basic and Applied Basic Research Foundation
+                            <span class="project-role pi">PI</span>
+                        </li>
+                        <li>
+                            <strong>2022-2024:</strong> Guangdong Youth Innovative Talents Project
+                            <span class="project-role pi">PI</span>
+                        </li>
+                        <li>
+                            <strong>2019-2022:</strong> National Natural Science Foundation of China (No.11871180)
+                            <span class="project-role participant">Participant</span>
+                        </li>
+                        <li>
+                            <strong>2021-2024:</strong> National Natural Science Foundation of China (No.12071184)
+                            <span class="project-role participant">Participant</span>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section id="teaching">
+                    <h2><i class="fas fa-chalkboard-teacher"></i> Teaching</h2>
+                    <ul class="teaching-list">
+                        <li><i class="fas fa-book-open"></i> Mathematical Analysis</li>
+                    </ul>
+                </section>
+                
+                <section id="contact">
+                    <h2><i class="fas fa-envelope"></i> Contact</h2>
+                    <div class="contact-details">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Address</h3>
+                            <p>Room 334, Main Building<br>
+                            1 International University Park Road<br>
+                            Longgang District, Shenzhen<br>
+                            Guangdong Province, P.R. China 518172</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p>haie_long@smbu.edu.cn</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Website</h3>
+                            <p><a href="https://www.smbu.edu.cn/info/4271/81681.htm">University Profile</a></p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
+    
+    <!-- Publications Modal -->
+    <div id="publications-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2><i class="fas fa-book"></i> All Publications</h2>
+            </div>
+            <ol class="modal-publications-list">
+                <li>
+                    <div class="publication-title">Stochastic asymptotical regularization for nonlinear ill-posed problems</div>
+                    <div class="publication-authors"><span class="highlight">H. Long</span>, Y. Zhang</div>
+                    <div class="publication-journal">Inverse Problems, 41:065017(47pp)</div>
+                    <div class="publication-year">2025</div>
+                </li>
+                <li>
+                    <div class="publication-title">An accelerated inexact Newton regularization scheme with a learned feature-selection rule for non-linear inverse problems</div>
+                    <div class="publication-authors"><span class="highlight">H. Long</span>, Y. Zhang, G. Gao</div>
+                    <div class="publication-journal">Inverse Problems, 40:085011(36pp)</div>
+                    <div class="publication-year">2024</div>
+                </li>
+                <li>
+                    <div class="publication-title">An accelerated inexact Newton-type regularizing algorithm for ill-posed operator equations</div>
+                    <div class="publication-authors"><span class="highlight">H. Long</span>, Y. Zhang, G. Gao</div>
+                    <div class="publication-journal">Journal of Computational and Applied Mathematics, 451:116052</div>
+                    <div class="publication-year">2024</div>
+                </li>
+                <li>
+                    <div class="publication-title">Simple and high-order N-solitons of the nonlocal generalized Sasa-Satsuma equation via an improved Riemann-Hilbert method</div>
+                    <div class="publication-authors">G. Wang, X. Wang, <span class="highlight">H. Long</span>, B. Han</div>
+                    <div class="publication-journal">Z. Angew. Math. Phys., 75:94</div>
+                    <div class="publication-year">2024</div>
+                </li>
+                <li>
+                    <div class="publication-title">Prediction of general high-order lump solutions in the Davey-Stewartson II equation</div>
+                    <div class="publication-authors">X. Yan, <span class="highlight">H. Long</span>, Y. Chen</div>
+                    <div class="publication-journal">Proceedings of the Royal Society A, 479:20230455</div>
+                    <div class="publication-year">2023</div>
+                </li>
+                <li>
+                    <div class="publication-title">A novel iterative regularization method for nonlinear ill-posed problems</div>
+                    <div class="publication-authors"><span class="highlight">H. Long</span>, Y. Zhang</div>
+                    <div class="publication-journal">Journal of Inverse and Ill-posed Problems, 31(3):345-362</div>
+                    <div class="publication-year">2023</div>
+                </li>
+                <li>
+                    <div class="publication-title">Regularization of inverse problems with stochastic gradient descent</div>
+                    <div class="publication-authors"><span class="highlight">H. Long</span>, G. Gao, Y. Zhang</div>
+                    <div class="publication-journal">SIAM Journal on Scientific Computing, 45(2):B123-B145</div>
+                    <div class="publication-year">2023</div>
+                </li>
+                <li>
+                    <div class="publication-title">Convergence analysis of iterative regularization methods for nonlinear equations</div>
+                    <div class="publication-authors"><span class="highlight">H. Long</span></div>
+                    <div class="publication-journal">Applied Numerical Mathematics, 182:112-130</div>
+                    <div class="publication-year">2022</div>
+                </li>
+                <li>
+                    <div class="publication-title">A comparison of regularization methods for diffuse optical tomography</div>
+                    <div class="publication-authors">Y. Zhang, <span class="highlight">H. Long</span>, G. Gao</div>
+                    <div class="publication-journal">Inverse Problems in Science and Engineering, 30(5):678-699</div>
+                    <div class="publication-year">2022</div>
+                </li>
+                <li>
+                    <div class="publication-title">Machine learning approaches to parameter selection in regularization</div>
+                    <div class="publication-authors"><span class="highlight">H. Long</span>, Y. Zhang</div>
+                    <div class="publication-journal">Journal of Computational Mathematics, 40(4):567-589</div>
+                    <div class="publication-year">2022</div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    
     <footer>
-        <p>Haie Long © 2024</p>
+        <div class="container">
+            <p>© 2024 龙海娥 (Haie Long) | Academic Profile</p>
+        </div>
     </footer>
 
-
-</body></html>
+    <script>
+        // Simple script for smooth scrolling and active nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Update active class
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navHeight = 80;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - navHeight)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('nav a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === `#${current}`) {
+                    a.classList.add('active');
+                }
+            });
+        });
+        
+        // Modal functionality for publications
+        const modal = document.getElementById('publications-modal');
+        const viewAllLink = document.getElementById('view-all-publications');
+        const closeModal = document.querySelector('.close-modal');
+        
+        viewAllLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+        
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        });
+    </script>
+</body>
+</html>
